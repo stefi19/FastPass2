@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/login', { email, password });
             if (response.data.success) {
-                history.push('/dashboard'); // Assuming you have a dashboard route
+                navigate('/dashboard'); // Assuming you have a dashboard route
             } else {
                 alert('Login failed');
             }

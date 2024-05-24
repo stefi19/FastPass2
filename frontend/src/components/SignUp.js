@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -18,7 +18,7 @@ const SignUp = () => {
         try {
             const response = await axios.post('http://localhost:5000/signup', { email, password });
             if (response.data.success) {
-                history.push('/login');
+                navigate('/login');
             } else {
                 alert('Sign up failed');
             }
