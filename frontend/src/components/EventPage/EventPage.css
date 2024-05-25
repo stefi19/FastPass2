@@ -62,13 +62,13 @@ body {
 
 .buy-button {
   padding: 1rem 2rem;
-  background-color: var(--button-color);
   color: var(--text-color);
-  border: 2px solid var(--button-border-color);
+  
   border-radius: 5px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  width: 180px;
 }
 
 .buy-button:hover {
@@ -76,25 +76,71 @@ body {
   color: #ffffff;
 }
 
-.footer-nav {
+.footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff;
-  padding: 1rem 0;
+  width: 100%; /* Full width of the page */
+  background-color: #000000;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 0; /* Add some padding for better appearance */
+  position: fixed; /* Ensure the footer stays at the bottom */
+  bottom: 0;
+  left: 0;
 }
-
-.nav-icon {
-  font-size: 1.5rem;
-  color: var(--text-color);
-  text-decoration: none;
-}
-
 .nav-text {
   font-size: 1rem;
-  color: var(--text-color);
+  font-style: italic;
+  color: #ffffff;
+}
+.upcoming{
+  font-style: italic;
+  font-size: 25px;
+
+}
+.event{
+  text-align: center;
+}
+
+
+
+.event-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center; /* Center text and inline elements like button */
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #Afe7ff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 20px; /* Add padding for better appearance */
 }

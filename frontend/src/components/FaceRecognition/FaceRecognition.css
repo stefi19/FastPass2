@@ -28,9 +28,9 @@
   }
   
   .face-box {
-    width: 80%;
-    max-width: 400px;
-    height: 300px;
+   
+    max-width: 414px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,10 +44,15 @@
     width: 100%;
     height: auto;
   }
-  
+  .next-button{
+    width: 200px;
+    margin-top: 20px;
+  }
   .footer-text {
     font-size: 1.5rem;
     color: var(--primary-color);
-    margin-top: 2rem;
+    margin-top: 50px;
+    font-style: italic;
+
   }
   
