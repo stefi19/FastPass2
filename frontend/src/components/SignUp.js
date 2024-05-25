@@ -1,72 +1,47 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
-import './SignUp.css'; // Add CSS import
+// src/components/SignUp.js
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './SignUp.css';
 
-const SignUp = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const navigate = useNavigate();
+function SignUp() {
+  const navigate = useNavigate();
 
-    const handleSignUp = async (e) => {
-        e.preventDefault();
-        if (password !== confirmPassword) {
-            alert('Passwords do not match');
-            return;
-        }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform validation or any other operations here
+    navigate('/face-recognition');
+  };
 
-        try {
-            const response = await axios.post('http://localhost:5000/signup', { email, password });
-            if (response.data.success) {
-                navigate('/login');
-            } else {
-                alert('Sign up failed');
-            }
-        } catch (error) {
-            console.error('Error signing up:', error);
-            alert('An error occurred. Please try again.');
-        }
-    };
-
-    return (
-        <div className="signup-container">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSignUp}>
-                <div className="form-group">
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Confirm Password:</label>
-                    <input
-                        type="password"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
-            <div className="links">
-                <Link to="/login">Back to Login</Link>
-            </div>
-        </div>
-    );
-};
+  return (
+    <div className="signup">
+      <h2>SignUp</h2>
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <label>
+          name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          enter password
+          <input type="password" name="password" required />
+        </label>
+        <label>
+          ID
+          <input type="text" name="id" required />
+        </label>
+        <button type="submit" className="signup-button">NEXT</button>
+      </form>
+      <div className="footer">
+        {Array(8).fill().map((_, index) => (
+          <span key={index} className="runner">&#x1F3C3;</span>
+        ))}
+      </div>
+      <div className="footer-text">FastPass</div>
+    </div>
+  );
+}
 
 export default SignUp;
