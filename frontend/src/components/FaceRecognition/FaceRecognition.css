@@ -1,0 +1,53 @@
+/* src/components/FaceRecognition.css */
+:root {
+    --primary-color: #2C3E50;
+    --background-color: #cceeff;
+    --text-color: #2C3E50;
+    --font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+  }
+  
+  .face-recognition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background-color); /* Adjust the background color */
+  }
+  
+  .face-recognition h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+  
+  .face-box {
+    width: 80%;
+    max-width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .face-box img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .footer-text {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-top: 2rem;
+  }
+  

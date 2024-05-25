@@ -1,11 +1,14 @@
-@import url('./styles.css');
+
 .login-container {
-    max-width: 400px;
+    background-color: #AFE7FF;
+    max-width: 500px;
+
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #AFE7FF;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 200px;
 }
 
 .login-container h2 {
@@ -56,3 +59,32 @@ button:hover {
 .links a:hover {
     text-decoration: underline;
 }
+.img{
+    width: 500px;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .runner {
+    font-size: 1.5rem;
+    margin: 0 0.2rem;
+    
+    animation: run 1s steps(8) infinite, move 3s linear infinite;
+  }
+  
+  @keyframes run {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }

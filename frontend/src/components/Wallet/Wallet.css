@@ -1,0 +1,95 @@
+/* src/components/Wallet/Wallet.css */
+.wallet-page {
+    padding: 2rem;
+    text-align: center;
+    background-color: #cceeff;
+    height: 100vh;
+  }
+  
+  .wallet-page h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card {
+    background-color: #002366;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: left;
+  }
+  
+  .card-number {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+  
+  .card-name {
+    font-size: 1.2rem;
+  }
+  
+  .balance-button {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .balance-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .wallet-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .wallet-button {
+    background-color: #002366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .wallet-button:hover {
+    background-color: #001244;
+  }
+  
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2C3E50;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .nav-text {
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  

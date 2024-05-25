@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css'; // Add CSS import
-
+import imageLOGIN from '../../photo/login.png';
+import people from '../../photo/runner.png';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,7 +26,7 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h2>Login</h2>
+            <img src={imageLOGIN} className="img"/>
             <form onSubmit={handleLogin}>
                 <div className="form-group">
                     <label>Email:</label>
@@ -36,6 +37,7 @@ const Login = () => {
                         required
                     />
                 </div>
+
                 <div className="form-group">
                     <label>Password:</label>
                     <input
@@ -45,6 +47,11 @@ const Login = () => {
                         required
                     />
                 </div>
+                <div className="footer">
+                    {Array(10).fill().map((_, index) => (
+                    <span key={index} className="runner"><img src={people}></img></span>
+                    ))}
+                    </div>
                 <button type="submit">Login</button>
             </form>
             <div className="links">
