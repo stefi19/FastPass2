@@ -1,0 +1,67 @@
+/* src/components/Profile/Profile.css */
+.profile-page {
+    text-align: center;
+    padding: 2rem;
+    background-color: #cceeff;
+    height: 100vh;
+  }
+  
+  .profile-page h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-info {
+    background-color: #002366;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-info p {
+    margin: 0.5rem 0;
+  }
+  
+  .social-links p,
+  .policies p {
+    margin: 0.5rem 0;
+    color: #002366;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links p:hover,
+  .policies p:hover {
+    color: #3498db;
+  }
+  
+  .footer-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2C3E50;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .nav-text {
+    color: #fff;
+    font-size: 1.2rem;
+  }
+  
