@@ -1,8 +1,8 @@
-/* src/components/SignUp.css */
+
 :root {
     --primary-color: #2C3E50;
     --secondary-color: #2980B9;
-    --background-color: #cceeff;
+    --background-color: #AFE7FF;
     --button-color: #3498db;
     --button-hover-color: #2980b9;
     --text-color: #2C3E50;
@@ -12,16 +12,32 @@
   body {
     margin: 0;
     font-family: var(--font-family);
-    background-color: var(--background-color);
+    background-color: #AFE7FF;
   }
-  
+
+  .file-upload-label {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    text-decoration-color:#000000;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    background-color: #3498db;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.file-upload-input {
+    display: none;
+}
   .signup {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: var(--background-color); /* Adjust the background color */
+    background-color: #AFE7FF /* Adjust the background color */
   }
   
   .signup h2 {
@@ -57,13 +73,13 @@
   
   .signup-button {
     padding: 1rem 2rem;
-    background-color: var(--button-color);
-    color: #fff;
-    border: none;
+    background-color: #3498db;
+    color: #000000;
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 5px;
   }
   
   .signup-button:hover {
@@ -91,13 +107,13 @@
   }
   
   @keyframes move {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
   }
   
   .footer-text {
-    font-size: 1.5rem;
     color: var(--primary-color);
-    margin-top: 1rem;
+    margin-top: 25px;
+    font-style: italic;
   }
-  
+   
