@@ -3,7 +3,7 @@ from flask_cors import CORS
 from routes.auth import auth_bp
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins for simplicity. Restrict this in production.
 
 app.register_blueprint(auth_bp, url_prefix='/')
 

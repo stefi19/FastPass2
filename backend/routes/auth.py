@@ -26,3 +26,16 @@ def login():
         return jsonify({"success": True}), 200
     else:
         return jsonify({"success": False, "message": "Invalid credentials"}), 401
+
+@auth_bp.route('/forgot-password', methods=['POST'])
+def forgot_password():
+    data = request.get_json()
+    email = data['email']
+
+    user = get_user_by_email(email)
+    if user:
+        # Implement your password reset logic here
+        # For example, generate a reset token and send an email
+        return jsonify({"success": True}), 200
+    else:
+        return jsonify({"success": False, "message": "Email not found"}), 404

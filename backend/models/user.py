@@ -1,12 +1,8 @@
-from pymongo import MongoClient
-from bcrypt import hashpw, gensalt, checkpw
-
-client = MongoClient('mongodb://localhost:27017/')
-db = client['event_entry_system']
-users = db['users']
+import hashlib
+from .db import users
 
 def create_user(email, password):
-    hashed_password = hashpw(password.encode('utf-8'), gensalt())
+    hashed_password = hashlib.sha256(password.encode()).hexdigest()
     user = {
         "email": email,
         "password": hashed_password
@@ -17,4 +13,4 @@ def get_user_by_email(email):
     return users.find_one({"email": email})
 
 def verify_password(stored_password, provided_password):
-    return checkpw(provided_password.encode('utf-8'), stored_password)
+    return stored_password == hashlib.sha256(provided_password.encode()).hexdigest()

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import './SignUp.css'; // Add CSS import
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -29,10 +30,10 @@ const SignUp = () => {
     };
 
     return (
-        <div>
+        <div className="signup-container">
             <h2>Sign Up</h2>
             <form onSubmit={handleSignUp}>
-                <div>
+                <div className="form-group">
                     <label>Email:</label>
                     <input
                         type="email"
@@ -41,7 +42,7 @@ const SignUp = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Password:</label>
                     <input
                         type="password"
@@ -50,7 +51,7 @@ const SignUp = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Confirm Password:</label>
                     <input
                         type="password"
@@ -61,6 +62,9 @@ const SignUp = () => {
                 </div>
                 <button type="submit">Sign Up</button>
             </form>
+            <div className="links">
+                <Link to="/login">Back to Login</Link>
+            </div>
         </div>
     );
 };

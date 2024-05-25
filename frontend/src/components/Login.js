@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import './Login.css'; // Add CSS import
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -23,10 +24,10 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className="login-container">
             <h2>Login</h2>
             <form onSubmit={handleLogin}>
-                <div>
+                <div className="form-group">
                     <label>Email:</label>
                     <input
                         type="email"
@@ -35,7 +36,7 @@ const Login = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label>Password:</label>
                     <input
                         type="password"
@@ -46,6 +47,10 @@ const Login = () => {
                 </div>
                 <button type="submit">Login</button>
             </form>
+            <div className="links">
+                <Link to="/signup">Sign Up</Link>
+                <Link to="/forgot-password">Forgot Password?</Link>
+            </div>
         </div>
     );
 };
