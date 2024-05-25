@@ -1,8 +1,8 @@
-// src/components/FaceRecognition.js
+// src/components/FaceRecognition/FaceRecognition.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './FaceRecognition.css';
-import faceImage from '../photo/black.png'; // Ensure this path is correct
+import faceImage from '../../photo/black.png'; // Correct the path if necessary
 
 function FaceRecognition() {
   const navigate = useNavigate();

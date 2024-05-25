@@ -1,0 +1,57 @@
+/* src/components/CalendarDay/CalendarDay.css */
+.calendar-day {
+  padding: 1rem;
+  text-align: center;
+  background-color: #cceeff;
+}
+
+.calendar-day h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-day h2 span {
+  font-weight: bold;
+}
+
+.calendar-day h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.event-card {
+  background-color: #2C3E50;
+  color: #fff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.event-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.event-card p {
+  margin: 0.5rem 0;
+}
+
+.event-card .venue {
+  font-style: italic;
+  color: #2980b9;
+}
+
+.buy-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #2980b9;
+}

@@ -1,4 +1,4 @@
-// src/components/EventPage.js
+// src/components/EventPage/EventPage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './EventPage.css';
@@ -13,10 +13,10 @@ function EventPage() {
       <p>Ready for your next adventure?</p>
       <button className="buy-button">BUY</button>
       <div className="footer-nav">
-        <Link to="/search" className="nav-icon">🔍</Link>
+        <Link to="/chat" className="nav-icon">💬</Link>
         <Link to="/calendar" className="nav-icon">📅</Link>
         <div className="nav-text">FastPass</div>
-        <Link to="/documents" className="nav-icon">📑</Link>
+        <Link to="/wallet" className="nav-icon">💼</Link>
         <Link to="/profile" className="nav-icon">👤</Link>
       </div>
     </div>

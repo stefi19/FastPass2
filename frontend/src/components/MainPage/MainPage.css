@@ -1,7 +1,11 @@
-/* src/components/MainPage.css */
+/* src/components/MainPage/MainPage.css */
 :root {
-  --primary-color: #0074D9; /* Bright blue */
-  --background-color: #F5F5F5; /* Light gray background */
+  --primary-color: #2C3E50;
+  --secondary-color: #2980B9;
+  --background-color: #cceeff;
+  --button-color: #3498db;
+  --button-hover-color: #2980b9;
+  --text-color: #2C3E50;
   --font-family: 'Roboto', sans-serif;
 }
 
@@ -17,7 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #cceeff; /* Adjust the background color */
+  background-color: var(--background-color);
 }
 
 .logo {
@@ -35,24 +39,23 @@ body {
   color: var(--primary-color);
 }
 
-.button {
+.login-button, .signup-button {
   display: inline-block;
   margin-top: 2rem;
-  padding: 1rem 4rem; /* Adjust padding for larger button */
-  background-color: var(--primary-color);
-  color: #ffffff;
+  padding: 1rem 2rem;
+  background-color: var(--button-color);
+  color: #fff;
   text-decoration: none;
-  border: none;
   border-radius: 5px;
-  font-size: 1.5rem; /* Larger font size */
+  font-size: 1.2rem;
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
   cursor: pointer;
-  margin-bottom: 1rem; /* Space between buttons */
+  margin-right: 10px; /* Add some space between the buttons */
 }
 
-.button:hover {
-  background-color: #005DA6; /* Darker blue on hover */
+.login-button:hover, .signup-button:hover {
+  background-color: var(--button-hover-color);
 }
 
 .footer {
