@@ -1,54 +1,69 @@
-
+// src/components/EventPage/EventPage.js
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 import { Link, useNavigate } from 'react-router-dom';
 import './EventPage.css';
 import Person from '../../photo/person.svg';
 import Card from '../../photo/card.svg';
 import Calendar from '../../photo/calendar.svg';
 import Chat from '../../photo/chat.svg';
-function EventPage() {
-  const [showTicket, setShowTicket] = useState(false);
-  const navigate = useNavigate();
+Modal.setAppElement('#root'); // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 
-  const handleTicketClick = () => {
-    setShowTicket(true);
-  };
+const EventPage = () => {
+  const [ticketModalIsOpen, setTicketModalIsOpen] = useState(false);
+  const [queueModalIsOpen, setQueueModalIsOpen] = useState(false);
 
-  const handlePaidClick = () => {
-    navigate('/wallet');
-  };
+  const openTicketModal = () => setTicketModalIsOpen(true);
+  const closeTicketModal = () => setTicketModalIsOpen(false);
 
+  const openQueueModal = () => setQueueModalIsOpen(true);
+  const closeQueueModal = () => setQueueModalIsOpen(false);
   return (
-    <div className="event-page">
-      <h2>Your <span className="upcoming">upcoming</span><br></br>
-      <h2 className="event">event</h2></h2>
-      <button className="event-button" onClick={handleTicketClick}>Ticket</button>
-      <button className="event-button">Time at queue</button>
-      <button className="event-button">Get directions</button>
-      <p>Ready for your next adventure?</p>
-      <h1 className="buy-button" onClick={handlePaidClick}>PAID</h1>
-      {showTicket && (
-                <div className="modal-overlay" onClick={handleTicketClick}>
-                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                       
-                        <p>Event: Atelier de creație în limba germană</p>
-                        <p>Date: 30th May</p>
-                        <p>Venue: Teatrul Gong</p>
-                        <p>Seat: A12</p>
-                        <p>Price: $20</p>
-                        <button className="close-button" onClick={handleTicketClick}>Close</button>
-                    </div>
-                </div>
-            )}
-      <div className="footer">
-        <Link to="/chat"><img src={Chat} ></img></Link>
-        <Link to="/calendar" ><img src={Calendar} ></img></Link>
-        <div className="nav-text">FastPass</div>
-        <Link to="/wallet" ><img src={Card} ></img></Link>
-        <Link to="/profile" ><img src={Person} ></img></Link>
+    <div>
+    <div >
+      <div className="container">
+        <h2>Your <span className="upcoming">upcoming</span> 
+        <br></br>event</h2>
+        <button className="button" onClick={openTicketModal}>Ticket</button>
+        <button className="button" onClick={openQueueModal}>Time at queue</button>
+        <button className="button">Get directions</button>
+        <p className="p">Ready for your <span className="span">next</span> adventure?</p>
+        <Link to="/wallet"><button className="buy-button">Paid</button></Link>
       </div>
+
+      <Modal
+        isOpen={ticketModalIsOpen}
+        onRequestClose={closeTicketModal}
+        contentLabel="Ticket Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Ticket Information</h2>
+        <button onClick={closeTicketModal}>Close</button>
+      </Modal>
+
+      <Modal
+        isOpen={queueModalIsOpen}
+        onRequestClose={closeQueueModal}
+        contentLabel="Queue Modal"
+        className="modal"
+        overlayClassName="overlay"
+      >
+        <h2>Queue Information</h2>
+        <button onClick={closeQueueModal}>Close</button>
+      </Modal>
     </div>
+
+    <div className="footer">
+        <Link to="/chat" className="nav-icon"><img src={Chat}></img></Link>
+        <Link to="/calendar" className="nav-icon"><img src={Calendar}></img></Link>
+        <div className="nav-text">FastPass</div>
+        <Link to="/wallet" className="nav-icon"><img src={Card}></img></Link>
+        <Link to="/profile" className="nav-icon"><img src={Person}></img></Link>
+      </div>
+  </div>
   );
-}
+};
+
 
 export default EventPage;

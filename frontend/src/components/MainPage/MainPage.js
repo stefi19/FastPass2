@@ -6,6 +6,7 @@ import logo from '../../photo/fastpass.png'; // Correct the path if necessary
 
 function MainPage() {
   return (
+<div>
     <div className="main">
       <div>
         <img src={logo} alt="Fast Pass Logo" className="logo-image" />
@@ -14,7 +15,7 @@ function MainPage() {
       <div>
       <h2 >We know if your face suits the event</h2>
       </div>
-      <div className="footer">
+      <div className="footer1">
         {Array(10).fill().map((_, index) => (
           <span key={index} className="runner">&#x1F3C3;</span>
         ))}
@@ -23,10 +24,10 @@ function MainPage() {
       <br></br>
       <h4 className="h4">Do not have an account? </h4>
       <Link to="/signup" className="signUp-button">SignUp</Link>
-   
-      
-     
     </div>
+    
+</div>
+    
   );
 }
 

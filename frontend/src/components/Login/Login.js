@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Login.css'; // Add CSS import
 import imageLOGIN from '../../photo/login.png';
 import people from '../../photo/runner.png';
+
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -47,7 +48,7 @@ const Login = () => {
                         required
                     />
                 </div>
-                <div className="footer">
+                <div className="footer2">
                     {Array(10).fill().map((_, index) => (
                     <span key={index} className="runner"><img src={people}></img></span>
                     ))}

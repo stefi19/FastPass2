@@ -1,7 +1,13 @@
 // src/components/CalendarDay/CalendarDay.js
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import { Link,useParams, useNavigate } from 'react-router-dom';
 import './CalendarDay.css';
+import Person from '../../photo/person.svg';
+import Card from '../../photo/card.svg';
+import Calendar1 from '../../photo/calendar.svg';
+import Chat from '../../photo/chat.svg';
+
 
 const events = {
   '30': [
@@ -38,6 +44,13 @@ function CalendarDay() {
       ) : (
         <p>No events found for this date.</p>
       )}
+       <div className="footer">
+        <Link to="/chat" className="nav-icon"><img src={Chat}></img></Link>
+        <Link to="/calendar" className="nav-icon"><img src={Calendar1}></img></Link>
+        <div className="nav-text">FastPass</div>
+        <Link to="/wallet" className="nav-icon"><img src={Card}></img></Link>
+        <Link to="/profile" className="nav-icon"><img src={Person}></img></Link>
+      </div>
     </div>
   );
 }

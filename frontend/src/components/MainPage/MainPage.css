@@ -70,7 +70,7 @@ transition: background-color 0.3s ease
   background-color: var(--button-hover-color);
 }
 
-.footer {
+.footer1 {
   display: flex;
   justify-content: center;
   margin-top: 2rem;

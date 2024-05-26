@@ -1,7 +1,12 @@
-// src/components/Calendar/Calendar.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
+import { Link, useNavigate } from 'react-router-dom';
 import './Calendar.css';
+import Person from '../../photo/person.svg';
+import Card from '../../photo/card.svg';
+import Calendar1 from '../../photo/calendar.svg';
+import Chat from '../../photo/chat.svg';
+
 
 function Calendar() {
   const navigate = useNavigate();
@@ -40,6 +45,13 @@ function Calendar() {
           <div>Sat</div>
         </div>
         <div className="days">{renderDays()}</div>
+      </div>
+      <div className="footer">
+        <Link to="/chat" className="nav-icon"><img src={Chat}></img></Link>
+        <Link to="/calendar" className="nav-icon"><img src={Calendar1}></img></Link>
+        <div className="nav-text">FastPass</div>
+        <Link to="/wallet" className="nav-icon"><img src={Card}></img></Link>
+        <Link to="/profile" className="nav-icon"><img src={Person}></img></Link>
       </div>
     </div>
   );
